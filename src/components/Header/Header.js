@@ -38,25 +38,25 @@ const Header = () => {
           </button>
         </DesktopActionGroup>
         <Logo />
-        <LoginGroup>
+        <SubscribeWrapper>
           <Button>
             subscribe
           </Button>
           <LoginLink>Already a subscriber?</LoginLink>
-        </LoginGroup>
+        </SubscribeWrapper>
       </MainHeader>
     </header>
   );
 };
 
 const SuperHeader = styled.div`
-  @media ${QUERIES.desktopAndUp} {
-    display: none;
-  }
-
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+  
+  @media ${QUERIES.desktopAndUp} {
+    display: none;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
@@ -85,7 +85,8 @@ const MainHeader = styled(MaxWidthWrapper)`
   margin-bottom: 48px;
   
   @media ${QUERIES.desktopAndUp} {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
   }
 `;
 
@@ -97,19 +98,21 @@ const DesktopActionGroup = styled(ActionGroup)`
   }
 `;
 
-const LoginGroup = styled.div`
+const SubscribeWrapper = styled.div`
   display: none;
-  align-self: flex-end;
-  
-  flex-direction: column;
-  align-items: center;
   
   @media ${QUERIES.desktopAndUp} {
-    display: flex;
+    display: revert;
+    position: relative;
+    
+    justify-self: end;
   }
 `;
 
 const LoginLink = styled.a`
+  position: absolute;
+  margin-top: 8px;
+
   font-family: ${FAMILIES.serif};
   font-style: italic;
   text-decoration: underline;
