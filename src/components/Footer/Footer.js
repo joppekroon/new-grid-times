@@ -184,6 +184,7 @@ const MainNavArea = styled.div`
   @media ${QUERIES.tabletAndUp} {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: left;
   }
 `;
 
