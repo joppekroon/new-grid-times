@@ -23,9 +23,10 @@ const Wrapper = styled.article`
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   
   @media ${QUERIES.tabletOnly} { 
-    display: block;
+    display: revert;
   }
 `;
 
